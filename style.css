@@ -1,0 +1,127 @@
+h2 {
+  color: red;
+  text-align: center;
+}
+
+.row {
+    display: flex;
+    flex: 1;
+    gap: 20px; /* space between columns */
+    margin-bottom: 30px;
+
+  }
+
+.column {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background-color: lightblue;
+  height: 350px;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+/* Dropdown content appears on top */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* positions it just below the button */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 999; /* ensures it's above other elements */
+    min-width: 150px;
+}
+
+/* Show dropdown when hovering */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 8px 12px;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.no-style-link {
+    flex: 1; /* makes all columns equal width */
+  text-decoration: none; /* removes underline */
+  color: inherit;        /* inherits color from surrounding text */
+  cursor: pointer;       /* optional: shows pointer on hover */
+}
+
+.no-style-link:hover {
+    color:white;
+}
+
+.menu-no-style-link {
+  text-decoration: none; /* removes underline */
+  color: inherit;        /* inherits color from surrounding text */
+  cursor: pointer;       /* optional: shows pointer on hover */
+}
+
+.blur-on-hover {
+  position: relative;
+  overflow: hidden;
+  color: black; /* Ensure text is visible */
+}
+
+.blur-on-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: inherit; /* inherit background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transition: filter 0.3s ease;
+}
+
+.blur-on-hover:hover::before {
+  filter: blur(5px);
+}
+
+/* Ensure text stays above the background */
+.blur-on-hover > * {
+  position: relative;
+  z-index: 1;
+}
+
+.text-swap {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+   justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.text-swap .hover-text {
+  display: none;
+}
+
+.text-swap:hover .default-text {
+  display: none;
+}
+
+.text-swap:hover .hover-text {
+  display: inline;
+}
