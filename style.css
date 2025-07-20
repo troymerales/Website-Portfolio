@@ -1,0 +1,189 @@
+/*-----Fonts-----*/
+@font-face {
+  font-family: 'Kameron';
+  src: url('fonts/Kameron-Medium.ttf') format('truetype');
+  font-weight: normal;
+}
+
+/*-----Global-----*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Kameron', serif;
+  font-size: 20px;
+  color: #f1f1f1;
+}
+
+h1, .subtitle {
+  margin: 0;
+  padding: 5px;
+  background-color: #060226;
+  color: #f1f1f1;
+}
+
+h2 {
+  color: white;
+  background-color: #111539;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+}
+
+/*-----Header-----*/
+/*--------------------------------------*/
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #04041a;
+  color: #f1f1f1;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*-----Column Blocks-----*/
+.row {
+  display: flex;
+  flex: 1;
+  gap: 0;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  padding: 20px;
+  text-align: center;
+  background-color: #113245;
+  border: 0.5px solid black;
+  box-shadow: 10px 2px 100px rgba(0, 0, 0, 0.1);
+}
+/*-----Style link-----*/
+.no-style-link{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  background-color: #04041a;
+}
+
+.menu-no-style-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  background-color: #04041a;
+  padding: 5px;
+}
+
+.menu-no-style-link:hover {
+  background-color:#686882;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.no-style-link {
+  flex: 1;
+}
+
+.no-style-link:hover {
+  color: white;
+}
+
+/*-----Dropdown-----*/
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-width: 200px;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+.dropdown:hover .menu-no-style-link {
+  background-color: #686882; /* match your hover color */
+  border-radius: 5px;
+}
+
+
+.dropdown-content a {
+  display: block;
+  padding: 15px 12px;
+  margin: 0;
+  line-height: 1;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/*-----Blur on hover-----*/
+.blur-on-hover {
+  position: relative;
+  overflow: hidden;
+  color: black;
+}
+
+.blur-on-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transition: filter 0.3s ease;
+}
+
+.blur-on-hover:hover::before {
+  filter: blur(5px);
+}
+
+.blur-on-hover > * {
+  position: relative;
+  z-index: 1;
+}
+
+/*-----Swaptext on hover-----*/
+.text-swap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.text-swap .hover-text {
+  display: none;
+}
+
+.text-swap:hover .default-text {
+  display: none;
+}
+
+.text-swap:hover .hover-text {
+  display: inline;
+}
