@@ -1,53 +1,70 @@
-/*-----Fonts-----*/
+/*================== Fonts ==================*/
 @font-face {
   font-family: 'Kameron';
   src: url('fonts/Kameron-Medium.ttf') format('truetype');
   font-weight: normal;
 }
 
-/*-----Global-----*/
+
+/*================== Global Styles ==================*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Kameron', serif;
   font-size: 20px;
-  color: #f1f1f1;
+  color: black;
 }
 
 h1, .subtitle {
-  margin: 0;
+  margin: 0 50px;
   padding: 5px;
-  background-color: #060226;
-  color: #f1f1f1;
+  background-color: white;
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 h2 {
-  color: white;
-  background-color: #111539;
+  color: black;
+  background-color: white;
   text-align: center;
-  margin: 0;
+  margin: 0 0 20px 0;
   padding: 20px 0;
+  border: 2px solid black;
 }
 
-/*-----Header-----*/
-/*--------------------------------------*/
+section {
+  margin: 0 10% 175px 10%;
+}
+
+/*================== Header ==================*/
 header {
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   padding: 10px 0;
-  background-color: #04041a;
-  color: #f1f1f1;
+  background-color: white;
+  color: black;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: right;
 }
 
-/*-----Column Blocks-----*/
+
+/*================== Column & Row Blocks ==================*/
 .row {
   display: flex;
   flex: 1;
-  gap: 0;
+  padding: 15px;
+  border: 2px solid black;
 }
 
 .column {
@@ -59,42 +76,37 @@ header {
   height: 350px;
   padding: 20px;
   text-align: center;
-  background-color: #113245;
+  background-color: white;
   border: 0.5px solid black;
-  box-shadow: 10px 2px 100px rgba(0, 0, 0, 0.1);
+  margin: 10px;
 }
-/*-----Style link-----*/
-.no-style-link{
+
+
+/*================== Link Styling ==================*/
+.no-style-link,
+.menu-no-style-link {
   text-decoration: none;
-  color: inherit;
+  color: black;
   cursor: pointer;
-  background-color: #04041a;
+  background-color: white;
 }
 
 .menu-no-style-link {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  background-color: #04041a;
   padding: 5px;
 }
 
 .menu-no-style-link:hover {
-  background-color:#686882;
-  padding: 5px;
+  background-color: #686882;
   border-radius: 5px;
 }
 
-.no-style-link {
-  flex: 1;
-}
-
 .no-style-link:hover {
-  color: white;
+  color: black;
 }
 
-/*-----Dropdown-----*/
-.dropdown{
+
+/*================== Dropdown ==================*/
+.dropdown {
   position: relative;
   display: inline-block;
 }
@@ -113,15 +125,14 @@ header {
   text-align: left;
 }
 
-.dropdown:hover .dropdown-content{
+.dropdown:hover .dropdown-content {
   display: block;
 }
 
 .dropdown:hover .menu-no-style-link {
-  background-color: #686882; /* match your hover color */
+  background-color: #686882;
   border-radius: 5px;
 }
-
 
 .dropdown-content a {
   display: block;
@@ -136,7 +147,20 @@ header {
   background-color: #f1f1f1;
 }
 
-/*-----Blur on hover-----*/
+
+/*================== Effects: Blur on Hover ==================*/
+
+#educ p {
+  font-size: 40px;
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#educ .column {
+  border-radius: 10px;
+}
+
 .blur-on-hover {
   position: relative;
   overflow: hidden;
@@ -150,16 +174,25 @@ header {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: inherit;
+  background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 0;
+
+  filter: blur(1px) brightness(60%); /* initial blur & darken */
   transition: filter 0.3s ease;
+  z-index: 0;
+
+  transform: scale(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+
 }
 
 .blur-on-hover:hover::before {
-  filter: blur(5px);
+  filter: blur(6px) brightness(40%); /* stronger blur & darken on hover */
+  transform: scale(1.05);
+  filter: blur(6px) brightness(40%);
+
 }
 
 .blur-on-hover > * {
@@ -167,13 +200,16 @@ header {
   z-index: 1;
 }
 
-/*-----Swaptext on hover-----*/
+
+
+/*================== Effects: Swap Text on Hover ==================*/
 .text-swap {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  text-align: center;
 }
 
 .text-swap .hover-text {
@@ -186,4 +222,71 @@ header {
 
 .text-swap:hover .hover-text {
   display: inline;
+  
+  font-size: 20px;
+}
+
+
+/*================== Papers Section ==================*/
+#papers .row {
+  padding: 25px;
+  display: block;
+}
+
+#papers .row:hover {
+  padding: 20px;
+}
+
+.paptitle {
+  text-decoration: underline;
+  font-size: 30px;
+}
+
+/*card flip*/
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.card-container {
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+  margin: 50px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background-color: white;
+  text-align: center;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #2d2d2d;
+  color: white;
 }
