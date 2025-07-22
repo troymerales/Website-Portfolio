@@ -1,83 +1,182 @@
-h2 {
-  color: red;
-  text-align: center;
+/*====================================================GLOBAL====================================================*/
+
+
+/*================== Fonts ==================*/
+@font-face {
+  font-family: 'Kameron';
+  src: url('Fonts/Kameron-Medium.ttf') format('truetype');
+  font-weight: normal;
 }
 
-.row {
-    display: flex;
-    flex: 1;
-    gap: 20px; /* space between columns */
-    margin-bottom: 30px;
+/*================== Global Styles ==================*/
+html {
+  scroll-behavior: smooth;
+  background-color: white;
+}
 
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Kameron', serif;
+  font-size: 20px;
+  color: black;
+}
 
-.column {
-  display: flex;
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  background-color: lightblue;
-  height: 350px;
+
+h1 {
+  text-align: center;
+  margin: 0 0 20px 0;
   padding: 20px;
+  background-color: rgb(26, 26, 26);
+  color: white;
+  font-size: 150px;
+}
+
+.subtitle {
+  margin: 0px 15% 100px;
+}
+
+h2 {
+  color: black;
+  background-color: white;
   text-align: center;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  border: 2px solid black;
 }
 
+section {
+  margin: 0 10% 175px;
+}
 
+#main {
+  margin: 0 !important;
+}
+
+section .content {
+  border: 2px solid black;
+  padding: 25px;
+}
+/*====================================================HEADER====================================================*/
+
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: white;
+  color: black;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: right;
+}
+
+/*================== Dropdown ==================*/
 .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-/* Dropdown content appears on top */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%; /* positions it just below the button */
-    left: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    z-index: 999; /* ensures it's above other elements */
-    min-width: 150px;
+  position: relative;
+  display: inline-block;
 }
 
-/* Show dropdown when hovering */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  background-color: white;
+  border: 1px solid #000000;
+  min-width: 200px;
+  text-align: left;
+}
+
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
 .dropdown-content a {
-    padding: 8px 12px;
-    display: block;
-    text-decoration: none;
-    color: black;
+  display: block;
+  padding: 15px 12px;
+  line-height: 1;
+  text-decoration: none;
+  color: black;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+  background-color: #686882;
 }
 
-.no-style-link {
-    flex: 1; /* makes all columns equal width */
-  text-decoration: none; /* removes underline */
-  color: inherit;        /* inherits color from surrounding text */
-  cursor: pointer;       /* optional: shows pointer on hover */
+/*====================================================BODY====================================================*/
+
+
+/*================== Layout Blocks ==================*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
-.no-style-link:hover {
-    color:white;
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  border: 0.5px solid black;
+  margin: 10px;
+}
+
+/*================== Link Styling ==================*/
+.no-style-link,
+.menu-no-style-link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  background-color: white;
 }
 
 .menu-no-style-link {
-  text-decoration: none; /* removes underline */
-  color: inherit;        /* inherits color from surrounding text */
-  cursor: pointer;       /* optional: shows pointer on hover */
+  padding: 5px;
+}
+
+.menu-no-style-link:hover,
+.dropdown:hover .menu-no-style-link {
+  background-color: #686882;
+  border-radius: 5px;
+}
+
+.no-style-link:hover {
+  color: black;
+}
+
+
+/*====================================================EDUCATION====================================================*/
+
+
+/*================== Effects: Blur on Hover ==================*/
+#educ p {
+  font-size: 40px;
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#educ .column {
+  border-radius: 10px;
 }
 
 .blur-on-hover {
   position: relative;
   overflow: hidden;
-  color: black; /* Ensure text is visible */
+  color: black;
 }
 
 .blur-on-hover::before {
@@ -87,31 +186,33 @@ h2 {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: inherit; /* inherit background */
+  background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: blur(1px) brightness(60%);
+  transform: scale(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
   z-index: 0;
-  transition: filter 0.3s ease;
 }
 
 .blur-on-hover:hover::before {
-  filter: blur(5px);
+  filter: blur(6px) brightness(40%);
 }
 
-/* Ensure text stays above the background */
 .blur-on-hover > * {
   position: relative;
   z-index: 1;
 }
 
+/*================== Effects: Text Swap on Hover ==================*/
 .text-swap {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-   justify-content: center;
-    align-items: center;
-    display: flex;
+  text-align: center;
 }
 
 .text-swap .hover-text {
@@ -124,4 +225,132 @@ h2 {
 
 .text-swap:hover .hover-text {
   display: inline;
+  font-size: 20px;
+}
+
+
+/*====================================================PROJECTS====================================================*/
+
+
+/*================== Image Styling ==================*/
+#projects img {
+  width: 250px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 0%;
+  margin-bottom: 5px;
+  border: 0.01px solid black;
+}
+
+#projects .column {
+  flex: 0 0 100px;
+  width: 250px;
+}
+
+
+
+.projtitle {
+  font-size: 20px;
+  font-weight: 1000;
+}
+
+.projskill {
+  background-color: rgb(225, 176, 184);
+  border-radius: 15px;
+  padding: 2px 10px 2px 10px;
+  font-size: 12px;
+}
+
+.projlang {
+  background-color: rgb(202, 100, 117);
+  border-radius: 15px;
+  padding: 2px 10px 2px 10px;
+  font-size: 12px;  
+}
+
+.projdesc{ 
+  font-size: 10px;
+}
+
+#projects .column {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.1s ease;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+#projects .row {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 30px;
+}
+#projects .column:hover {
+  transform: scale(1.2); /* Slight enlargement */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional for depth effect */
+  z-index: 10;
+}
+
+.projtitle,
+.projskill,
+.projlang,
+.projdesc {
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+
+/*====================================================PAPERS====================================================*/
+#papers .row {
+  padding: 25px;
+  display: block;
+  transition: transform 0.1s ease;
+  border: 2px solid black;
+  background-color: white;
+}
+#papers .row:hover {
+  transform: scale(1.1);
+}
+
+.paptitle {
+  font-size: 20px;
+  font-weight: 1000;
+}
+.papauthor {
+  font-size: 15px;
+  font-style: italic;
+}
+.papdesc {
+  font-size: 10px;
+}
+#papers .row {
+  margin-bottom: -5px;
+}
+
+
+/*====================================================NON====================================================*/
+#non .column {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.papdesc {
+  font-size: 15px;
+}
+#papers .row {
+  margin-bottom: -5px;
+}
+
+
+/*====================================================NON====================================================*/
+#non .column {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
