@@ -1,3 +1,6 @@
+/*====================================================GLOBAL====================================================*/
+
+
 /*================== Fonts ==================*/
 @font-face {
   font-family: 'Kameron';
@@ -5,10 +8,10 @@
   font-weight: normal;
 }
 
-
 /*================== Global Styles ==================*/
 html {
   scroll-behavior: smooth;
+  background-color: white;
 }
 
 body {
@@ -19,32 +22,44 @@ body {
   color: black;
 }
 
-h1, .subtitle {
-  margin: 0 50px;
-  padding: 5px;
-  background-color: white;
-  color: black;
-}
 
 h1 {
   text-align: center;
-  margin-bottom: 10px;
+  margin: 0 0 20px 0;
+  padding: 20px;
+  background-color: rgb(26, 26, 26);
+  color: white;
+  font-size: 150px;
+}
+
+.subtitle {
+  margin: 0px 15% 100px;
 }
 
 h2 {
   color: black;
   background-color: white;
   text-align: center;
-  margin: 0 0 20px 0;
+  margin-bottom: 20px;
   padding: 20px 0;
   border: 2px solid black;
 }
 
 section {
-  margin: 0 10% 175px 10%;
+  margin: 0 10% 175px;
 }
 
-/*================== Header ==================*/
+#main {
+  margin: 0 !important;
+}
+
+section .content {
+  border: 2px solid black;
+  padding: 25px;
+}
+/*====================================================HEADER====================================================*/
+
+
 header {
   position: fixed;
   top: 0;
@@ -57,53 +72,6 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: right;
 }
-
-
-/*================== Column & Row Blocks ==================*/
-.row {
-  display: flex;
-  flex: 1;
-  padding: 15px;
-  border: 2px solid black;
-}
-
-.column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 350px;
-  padding: 20px;
-  text-align: center;
-  background-color: white;
-  border: 0.5px solid black;
-  margin: 10px;
-}
-
-
-/*================== Link Styling ==================*/
-.no-style-link,
-.menu-no-style-link {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-  background-color: white;
-}
-
-.menu-no-style-link {
-  padding: 5px;
-}
-
-.menu-no-style-link:hover {
-  background-color: #686882;
-  border-radius: 5px;
-}
-
-.no-style-link:hover {
-  color: black;
-}
-
 
 /*================== Dropdown ==================*/
 .dropdown {
@@ -118,10 +86,8 @@ header {
   left: 0;
   z-index: 999;
   background-color: white;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   min-width: 200px;
-  padding: 0;
-  margin: 0;
   text-align: left;
 }
 
@@ -129,27 +95,73 @@ header {
   display: block;
 }
 
-.dropdown:hover .menu-no-style-link {
-  background-color: #686882;
-  border-radius: 5px;
-}
-
 .dropdown-content a {
   display: block;
   padding: 15px 12px;
-  margin: 0;
   line-height: 1;
   text-decoration: none;
   color: black;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: #686882;
+}
+
+/*====================================================BODY====================================================*/
+
+
+/*================== Layout Blocks ==================*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  border: 0.5px solid black;
+  margin: 10px;
+}
+
+/*================== Link Styling ==================*/
+.no-style-link,
+.menu-no-style-link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+}
+
+.menu-no-style-link {
+  padding: 5px;
+}
+
+.menu-no-style-link:hover,
+.dropdown:hover .menu-no-style-link {
+  background-color: #686882;
+  border-radius: 5px;
+}
+
+.no-style-link:hover {
+  color: black;
 }
 
 
-/*================== Effects: Blur on Hover ==================*/
+/*====================================================EDUCATION====================================================*/
 
+
+/*================== Effects: Blur on Hover ==================*/
 #educ p {
   font-size: 40px;
   color: white;
@@ -178,21 +190,14 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  filter: blur(1px) brightness(60%); /* initial blur & darken */
-  transition: filter 0.3s ease;
-  z-index: 0;
-
+  filter: blur(1px) brightness(60%);
   transform: scale(1);
   transition: filter 0.3s ease, transform 0.3s ease;
-
+  z-index: 0;
 }
 
 .blur-on-hover:hover::before {
-  filter: blur(6px) brightness(40%); /* stronger blur & darken on hover */
-  transform: scale(1.05);
   filter: blur(6px) brightness(40%);
-
 }
 
 .blur-on-hover > * {
@@ -200,9 +205,7 @@ header {
   z-index: 1;
 }
 
-
-
-/*================== Effects: Swap Text on Hover ==================*/
+/*================== Effects: Text Swap on Hover ==================*/
 .text-swap {
   position: relative;
   display: flex;
@@ -222,71 +225,117 @@ header {
 
 .text-swap:hover .hover-text {
   display: inline;
-  
   font-size: 20px;
 }
 
 
-/*================== Papers Section ==================*/
+/*====================================================PROJECTS====================================================*/
+
+
+/*================== Image Styling ==================*/
+#projects img {
+  width: 250px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 0%;
+  margin-bottom: 5px;
+  border: 0.01px solid black;
+}
+
+#projects .column {
+  flex: 0 0 100px;
+  width: 250px;
+}
+
+
+
+.projtitle {
+  font-size: 20px;
+  font-weight: 1000;
+}
+
+.projskill {
+  background-color: rgb(225, 176, 184);
+  border-radius: 15px;
+  padding: 2px 10px 2px 10px;
+  font-size: 12px;
+}
+
+.projlang {
+  background-color: rgb(202, 100, 117);
+  border-radius: 15px;
+  padding: 2px 10px 2px 10px;
+  font-size: 12px;  
+}
+
+.projdesc{ 
+  font-size: 10px;
+}
+
+#projects .column {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.1s ease;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+#projects .row {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 30px;
+}
+#projects .column:hover {
+  transform: scale(1.2); /* Slight enlargement */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional for depth effect */
+  z-index: 10;
+}
+
+.projtitle,
+.projskill,
+.projlang,
+.projdesc {
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+
+/*====================================================PAPERS====================================================*/
 #papers .row {
   padding: 25px;
   display: block;
+  transition: transform 0.1s ease;
+  border: 2px solid black;
+  background-color: white;
 }
-
 #papers .row:hover {
-  padding: 20px;
+  transform: scale(1.1);
 }
 
 .paptitle {
-  text-decoration: underline;
-  font-size: 30px;
+
+  font-size: 25px;
+  font-weight: 1000;
+}
+.papauthor {
+  font-style: italic;
+}
+.papdesc {
+  font-size: 15px;
+}
+#papers .row {
+  margin-bottom: -5px;
 }
 
-/*card flip*/
-.cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
 
-.card-container {
-  width: 250px;
-  height: 350px;
-  perspective: 1000px;
-  margin: 50px;
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-}
-
-.card-container:hover .card {
-  transform: rotateY(180deg);
-}
-
-.front, .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  background-color: white;
-  text-align: center;
-}
-
-.back {
-  transform: rotateY(180deg);
-  background-color: #2d2d2d;
+/*====================================================NON====================================================*/
+#non .column {
+  font-size: 20px;
   color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
