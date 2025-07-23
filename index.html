@@ -199,4 +199,13 @@
 </script>
 
 </body>
+rySelectorAll('.blur-on-hover').forEach(el => {
+    const bg = el.getAttribute('data-bg');
+    if (bg) {
+      el.style.setProperty('--bg-image', `url(${bg})`);
+    }
+  });
+</script>
+
+</body>
 </html>
