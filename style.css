@@ -8,10 +8,11 @@
   font-weight: normal;
 }
 
+
+
 /*================== Global Styles ==================*/
 html {
   scroll-behavior: smooth;
-  background-color: white;
 }
 
 body {
@@ -19,7 +20,6 @@ body {
   padding: 0;
   font-family: 'Kameron', serif;
   font-size: 20px;
-  color: black;
 }
 
 
@@ -27,36 +27,43 @@ h1 {
   text-align: center;
   margin: 0 0 20px 0;
   padding: 20px;
-  background-color: rgb(26, 26, 26);
-  color: white;
   font-size: 150px;
 }
 
 .subtitle {
-  margin: 0px 15% 100px;
+  margin: 0px 20% 100px;
 }
 
 h2 {
-  color: black;
-  background-color: white;
+  font-size: 40px;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 20px;
   padding: 20px 0;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
+  border-radius: 15px;
 }
 
-section {
-  margin: 0 10% 175px;
+sup {
+  font-size: 10px;
 }
 
 #main {
   margin: 0 !important;
 }
 
-section .content {
-  border: 2px solid black;
-  padding: 25px;
+#educ, #projects, #papers, #non {
+  /*border: 2px solid black;*/
+  /*border-radius: 15px;*/
+  padding: 5px;
+  margin: 0px 5% 30px;
 }
+
+section .content {
+  /*border: 2px solid black;*/
+  border-radius: 15px;
+  margin: 20px 20px;
+}
+
 /*====================================================HEADER====================================================*/
 
 
@@ -66,8 +73,6 @@ header {
   right: 0;
   width: 100%;
   padding: 10px 0;
-  background-color: white;
-  color: black;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: right;
@@ -85,10 +90,9 @@ header {
   top: 100%;
   left: 0;
   z-index: 999;
-  background-color: white;
-  border: 1px solid #000000;
   min-width: 200px;
   text-align: left;
+  border: 1px solid #000000;
 }
 
 .dropdown:hover .dropdown-content {
@@ -100,13 +104,23 @@ header {
   padding: 15px 12px;
   line-height: 1;
   text-decoration: none;
-  color: black;
+  border: 0.1px solid #eee8e8;
 }
 
-.dropdown-content a:hover {
-  background-color: #686882;
+.dropdown-menu {
+  display: none; /* hidden by default */
+  position: absolute;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 1;
+  padding: 10px;
 }
 
+.dropdown-menu a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+}
 /*====================================================BODY====================================================*/
 
 
@@ -115,7 +129,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  padding: 15px;
   align-items: center;
   justify-content: center;
 }
@@ -128,8 +141,6 @@ header {
   align-items: center;
   height: 350px;
   border-radius: 10px;
-  padding: 20px;
-  background-color: white;
   border: 0.5px solid black;
   margin: 10px;
 }
@@ -138,9 +149,7 @@ header {
 .no-style-link,
 .menu-no-style-link {
   text-decoration: none;
-  color: black;
   cursor: pointer;
-  background-color: white;
 }
 
 .menu-no-style-link {
@@ -149,12 +158,7 @@ header {
 
 .menu-no-style-link:hover,
 .dropdown:hover .menu-no-style-link {
-  background-color: #686882;
   border-radius: 5px;
-}
-
-.no-style-link:hover {
-  color: black;
 }
 
 
@@ -163,10 +167,10 @@ header {
 
 /*================== Effects: Blur on Hover ==================*/
 #educ p {
-  font-size: 40px;
-  color: white;
+  font-size: 30px;
   font-weight: 500;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin: 30px;
 }
 
 #educ .column {
@@ -176,7 +180,6 @@ header {
 .blur-on-hover {
   position: relative;
   overflow: hidden;
-  color: black;
 }
 
 .blur-on-hover::before {
@@ -213,6 +216,7 @@ header {
   align-items: center;
   cursor: pointer;
   text-align: center;
+  
 }
 
 .text-swap .hover-text {
@@ -224,8 +228,9 @@ header {
 }
 
 .text-swap:hover .hover-text {
-  display: inline;
+  display: block;
   font-size: 20px;
+  margin: 30px;
 }
 
 
@@ -234,8 +239,8 @@ header {
 
 /*================== Image Styling ==================*/
 #projects img {
-  width: 250px;
-  height: 200px;
+  width: 180px;
+  height: 120px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-top: 0%;
@@ -245,49 +250,39 @@ header {
 
 #projects .column {
   flex: 0 0 100px;
-  width: 250px;
+  width: 180px;
+  height: 280px !important;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.1s ease;
+  margin: 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
-
-
 .projtitle {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 1000;
 }
 
-.projskill {
-  background-color: rgb(225, 176, 184);
+.projskill, .projlang { 
   border-radius: 15px;
   padding: 2px 10px 2px 10px;
-  font-size: 12px;
+  font-size: 10px;
 }
 
-.projlang {
-  background-color: rgb(202, 100, 117);
-  border-radius: 15px;
-  padding: 2px 10px 2px 10px;
-  font-size: 12px;  
-}
 
 .projdesc{ 
   font-size: 10px;
 }
 
-#projects .column {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.1s ease;
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: flex-start;
-}
 
 #projects .row {
   display: flex;
   align-items: stretch;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 #projects .column:hover {
   transform: scale(1.2); /* Slight enlargement */
@@ -300,18 +295,41 @@ header {
 .projlang,
 .projdesc {
   align-self: flex-start;
-  margin-bottom: 5px;
+  margin: 3px 8px 0px;
 }
 
+.projcontent {
+  display: contents;
+}
 
 /*====================================================PAPERS====================================================*/
 #papers .row {
-  padding: 25px;
-  display: block;
+  padding: 20px;
+  display: flex;
   transition: transform 0.1s ease;
-  border: 2px solid black;
-  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 2px 70px;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
 }
+
+#papers img {
+  object-fit: cover;
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  border: 0.5px solid black;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.paptext {
+  flex: 1;
+}
+
 #papers .row:hover {
   transform: scale(1.1);
 }
@@ -327,371 +345,108 @@ header {
 .papdesc {
   font-size: 10px;
 }
-#papers .row {
-  margin-bottom: -5px;
+
+select {
+  overflow: auto;
 }
-
-
 /*====================================================NON====================================================*/
 #non .column {
   font-size: 20px;
-  color: white;
   font-weight: 500;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-.papdesc {
-  font-size: 15px;
-}
-#papers .row {
-  margin-bottom: -5px;
-}
-
-
-/*====================================================NON====================================================*/
-#non .column {
+#non .blur-on-hover .default-text {
   font-size: 20px;
-  color: white;
-  font-weight: 500;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-/*====================================================GLOBAL====================================================*/
-
-
-/*================== Fonts ==================*/
-@font-face {
-  font-family: 'Kameron';
-  src: url('Fonts/Kameron-Medium.ttf') format('truetype');
-  font-weight: normal;
-}
-
-/*================== Global Styles ==================*/
-html {
-  scroll-behavior: smooth;
-  background-color: white;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Kameron', serif;
-  font-size: 20px;
-  color: black;
-}
-
-
-h1 {
-  text-align: center;
-  margin: 0 0 20px 0;
-  padding: 20px;
-  background-color: rgb(26, 26, 26);
-  color: white;
-  font-size: 150px;
-}
-
-.subtitle {
-  margin: 0px 15% 100px;
-}
-
-h2 {
-  color: black;
-  background-color: white;
-  text-align: center;
-  margin-bottom: 20px;
-  padding: 20px 0;
-  border: 2px solid black;
-}
-
-section {
-  margin: 0 10% 175px;
-}
-
-#main {
-  margin: 0 !important;
-}
-
-section .content {
-  border: 2px solid black;
-  padding: 25px;
-}
-/*====================================================HEADER====================================================*/
-
-
-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  padding: 10px 0;
-  background-color: white;
-  color: black;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: right;
-}
-
-/*================== Dropdown ==================*/
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 999;
-  background-color: white;
-  border: 1px solid #000000;
-  min-width: 200px;
-  text-align: left;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 15px 12px;
-  line-height: 1;
-  text-decoration: none;
-  color: black;
-}
-
-.dropdown-content a:hover {
-  background-color: #686882;
-}
-
-/*====================================================BODY====================================================*/
-
-
-/*================== Layout Blocks ==================*/
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1;
-  padding: 15px;
-  align-items: center;
-  justify-content: center;
-}
-
-.column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 350px;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: white;
-  border: 0.5px solid black;
   margin: 10px;
 }
-
-/*================== Link Styling ==================*/
-.no-style-link,
-.menu-no-style-link {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-  background-color: white;
-}
-
-.menu-no-style-link {
-  padding: 5px;
-}
-
-.menu-no-style-link:hover,
-.dropdown:hover .menu-no-style-link {
-  background-color: #686882;
-  border-radius: 5px;
-}
-
-.no-style-link:hover {
-  color: black;
-}
-
-
-/*====================================================EDUCATION====================================================*/
-
-
-/*================== Effects: Blur on Hover ==================*/
-#educ p {
-  font-size: 40px;
-  color: white;
-  font-weight: 500;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-#educ .column {
-  border-radius: 10px;
-}
-
-.blur-on-hover {
-  position: relative;
-  overflow: hidden;
-  color: black;
-}
-
-.blur-on-hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-image: var(--bg-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(1px) brightness(60%);
-  transform: scale(1);
-  transition: filter 0.3s ease, transform 0.3s ease;
-  z-index: 0;
-}
-
-.blur-on-hover:hover::before {
-  filter: blur(6px) brightness(40%);
-}
-
-.blur-on-hover > * {
-  position: relative;
-  z-index: 1;
-}
-
-/*================== Effects: Text Swap on Hover ==================*/
-.text-swap {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  text-align: center;
-}
-
-.text-swap .hover-text {
-  display: none;
-}
-
-.text-swap:hover .default-text {
-  display: none;
-}
-
-.text-swap:hover .hover-text {
-  display: inline;
-  font-size: 20px;
-}
-
-
-/*====================================================PROJECTS====================================================*/
-
-
-/*================== Image Styling ==================*/
-#projects img {
-  width: 250px;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-top: 0%;
-  margin-bottom: 5px;
-  border: 0.01px solid black;
-}
-
-#projects .column {
-  flex: 0 0 100px;
-  width: 250px;
-}
-
-
-
-.projtitle {
-  font-size: 20px;
-  font-weight: 1000;
-}
-
-.projskill {
-  background-color: rgb(225, 176, 184);
-  border-radius: 15px;
-  padding: 2px 10px 2px 10px;
-  font-size: 12px;
-}
-
-.projlang {
-  background-color: rgb(202, 100, 117);
-  border-radius: 15px;
-  padding: 2px 10px 2px 10px;
-  font-size: 12px;  
-}
-
-.projdesc{ 
-  font-size: 10px;
-}
-
-#projects .column {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.1s ease;
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: flex-start;
-}
-
-#projects .row {
-  display: flex;
-  align-items: stretch;
-  margin-bottom: 30px;
-}
-#projects .column:hover {
-  transform: scale(1.2); /* Slight enlargement */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional for depth effect */
-  z-index: 10;
-}
-
-.projtitle,
-.projskill,
-.projlang,
-.projdesc {
-  align-self: flex-start;
-  margin-bottom: 5px;
-}
-
-
-/*====================================================PAPERS====================================================*/
-#papers .row {
-  padding: 25px;
-  display: block;
-  transition: transform 0.1s ease;
-  border: 2px solid black;
-  background-color: white;
-}
-#papers .row:hover {
-  transform: scale(1.1);
-}
-
-.paptitle {
-
-  font-size: 25px;
-  font-weight: 1000;
-}
-.papauthor {
-  font-style: italic;
-}
-.papdesc {
+#non .blur-on-hover .hover-text {
   font-size: 15px;
 }
-#papers .row {
-  margin-bottom: -5px;
+
+/*=====================COLORS!!!!!!!!================*/
+
+/*whole*/
+html {
+  background-color: white;
+  color: black;
 }
+/*----------------------------------------*/
 
 
-/*====================================================NON====================================================*/
-#non .column {
-  font-size: 20px;
+/*----------------welcome-----------------*/
+h1 {
+  background-color: #0E131F;
   color: white;
-  font-weight: 500;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
+/*----------------------------------------*/
+
+
+/*----------menu bar and section----------*/
+header {
+  background-color: white;
+  color: black;
+}
+.dropdown-content {
+  background-color: white;
+}
+/*----------------------------------------*/
+
+
+/*-----------------titles------------------*/
+h2 {
+  background-color: white;
+}
+/*----------------------------------------*/
+
+
+/*------------------link------------------*/
+.menu-no-style-link:hover,
+.dropdown:hover .menu-no-style-link {
+  background-color: #bebec1;
+  color: black;
+}
+.dropdown-content a {
+  color: black;
+}
+.dropdown-menu a {
+  color: black;
+}
+.dropdown-content a:hover {
+  background-color: #bebec1;
+}
+.menu-no-style-link, .no-style-link {
+  color: black;
+}
+/*----------------------------------------*/
+
+
+/*---------------columns------------------*/
+.column {
+  background-color: white;
+}
+/*----------------------------------------*/
+
+
+
+/*------------projects--------------------*/
+.projskill {
+  background-color: rgb(225, 176, 184);
+}
+.projlang{
+  background-color: rgb(202, 100, 117);
+}
+/*----------------------------------------*/
+
+
+/*----------------papers------------------*/
+#papers .row {
+  background-color: white;
+}
+/*----------------------------------------*/
+
+
+/*---------with blur on hover--------------*/
+#non .column, #educ p {
+  color: white;
+}
+/*----------------------------------------*/
