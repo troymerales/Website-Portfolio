@@ -1,6 +1,5 @@
 /*====================================================GLOBAL====================================================*/
 
-
 /*================== Fonts ==================*/
 @font-face {
   font-family: 'Kameron';
@@ -8,17 +7,19 @@
   font-weight: normal;
 }
 
-
-
 /*================== Global Styles ==================*/
 html {
   scroll-behavior: smooth;
+  background-color: #000000;
 }
 
 body {
   margin: 0;
   font-family: 'Kameron', serif;
   font-size: 20px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 h2 {
@@ -26,7 +27,6 @@ h2 {
   text-align: center;
   margin: 20px 20px;
   padding: 20px 0;
-  /*border: 2px solid black;*/
   border-radius: 15px;
 }
 
@@ -34,67 +34,7 @@ sup {
   font-size: 10px;
 }
 
-#educ, #projects, #papers, #non {
-  /*border: 2px solid black;*/
-  /*border-radius: 15px;*/
-  padding: 5px;
-  margin: 0px 5% 0;
-  min-height: 100vh;
-}
-
-section .content {
-  /*border: 2px solid black;*/
-  border-radius: 15px;
-  margin: 20px 20px;
-}
-
-#main {
-  height: 100vh;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  background-image: url(Pictures/oble.jfif);
-  background-size: 140% auto;
-  background-position: 100% 50%;
-}
-/*#main img {
-  object-fit: cover;
-  width: 400px;
-  height: 500px;
-  border-radius: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-left: 70px;
-}*/
-.main-content {
-  flex: 1;
-  align-items: center;
-  margin-top: 0px;
-  margin-left: 570px;
-}
-h1 {
-  font-size: 100px;
-  margin: 0;
-}
-.subtitle {
-  margin-top: 0;
-}
-.connect-contact {
-  margin-top: 50px;
-}
-.button {
-  text-decoration: none;
-  color: black;
-  background-color: white;
-  border-radius: 25px;
-  margin: 0 12px;
-  padding: 10px 15px;
-}
-
-.button:hover {
-  background-color: rgb(214, 214, 214);
-}
 /*====================================================HEADER====================================================*/
-
 
 header {
   position: fixed;
@@ -106,15 +46,16 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: right;
   display: none;
+  
 }
 
-header.active, .menu-no-style-link.active {
+header.active,
+.menu-no-style-link.active {
   display: inline;
-  color: black;
+  
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-
-/*================== Dropdown ==================*/
 .dropdown {
   position: relative;
   display: inline-block;
@@ -141,11 +82,14 @@ header.active, .menu-no-style-link.active {
   line-height: 1;
   text-decoration: none;
   border: 0.1px solid #eee8e8;
-  
+}
+
+.dropdown-content a:hover {
+  background-color: transparent; /* placeholder, real color at bottom */
 }
 
 .dropdown-menu {
-  display: none; /* hidden by default */
+  display: none;
   position: absolute;
   border: 1px solid #ccc;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -158,10 +102,9 @@ header.active, .menu-no-style-link.active {
   padding: 5px 10px;
   text-decoration: none;
 }
+
 /*====================================================BODY====================================================*/
 
-
-/*================== Layout Blocks ==================*/
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -177,12 +120,12 @@ header.active, .menu-no-style-link.active {
   justify-content: center;
   align-items: center;
   height: 350px;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 0.5px solid black;
   margin: 10px;
 }
 
-/*================== Link Styling ==================*/
+/* Link Styling */
 .no-style-link,
 .menu-no-style-link {
   text-decoration: none;
@@ -198,22 +141,93 @@ header.active, .menu-no-style-link.active {
   border-radius: 5px;
 }
 
+/*====================================================MAIN====================================================*/
+
+#main {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-image: url(Pictures/oble.jfif);
+  background-size: 140% auto;
+  background-position: 100% 50%;
+}
+
+.main-content {
+  flex: 1;
+  align-items: center;
+  margin-top: 0;
+  margin-left: 570px;
+}
+
+h1 {
+  font-size: 100px;
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 0;
+}
+
+.connect-contact {
+  margin-top: 50px;
+}
+
+.button {
+  text-decoration: none;
+  border-radius: 25px;
+  margin: 0 12px;
+  padding: 12px 20px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: transparent; /* placeholder for color */
+}
+
+.buttontrans {
+  text-decoration: none;
+  border: 1px solid;
+  background-color: inherit;
+  border-radius: 25px;
+  margin: 0 12px;
+  padding: 10px 15px;
+}
 
 /*====================================================EDUCATION====================================================*/
 
 
-/*================== Effects: Blur on Hover ==================*/
+
+#educ,
+#projects,
+#papers,
+#non {
+  padding: 5px;
+  margin: 0;
+  min-height: 110vh;
+  background-image: url(Pictures/oble.jfif);
+  background-size: 260% auto;
+  background-position: 100% 70%;
+}
+
+section .content {
+  margin: 0 100px 20px;
+}
+
 #educ p {
   font-size: 30px;
-  font-weight: 500;
+  font-weight: bold;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin: 30px;
 }
 
 #educ .column {
   border-radius: 10px;
+  width: 500px;
+  height: 400px;
 }
 
+/* Effects: Blur on Hover */
 .blur-on-hover {
   position: relative;
   overflow: hidden;
@@ -230,14 +244,17 @@ header.active, .menu-no-style-link.active {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(0px) brightness(60%);
+  filter: blur(0px) brightness(40%);
   transform: scale(1);
   transition: filter 0.3s ease, transform 0.3s ease;
   z-index: 0;
+  will-change: filter, transform;
+  backface-visibility: hidden;
 }
 
 .blur-on-hover:hover::before {
   filter: blur(6px) brightness(40%);
+  transform: scale(1.05);
 }
 
 .blur-on-hover > * {
@@ -245,7 +262,7 @@ header.active, .menu-no-style-link.active {
   z-index: 1;
 }
 
-/*================== Effects: Text Swap on Hover ==================*/
+/* Effects: Text Swap on Hover */
 .text-swap {
   position: relative;
   display: flex;
@@ -267,21 +284,19 @@ header.active, .menu-no-style-link.active {
   display: block;
   font-size: 20px;
   margin: 30px;
+  font-weight: normal;
 }
-
 
 /*====================================================PROJECTS====================================================*/
 
-
-/*================== Image Styling ==================*/
 #projects img {
   width: 180px;
   height: 120px;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-top: 0%;
   margin-bottom: 5px;
-  border: 0.01px solid black;
+  border: 1px solid #F4F4F6;
 }
 
 #projects .column {
@@ -303,26 +318,26 @@ header.active, .menu-no-style-link.active {
   font-weight: 1000;
 }
 
-.projskill, .projlang { 
+.projskill,
+.projlang {
   border-radius: 15px;
   padding: 2px 10px 2px 10px;
   font-size: 10px;
 }
 
-
-.projdesc{ 
+.projdesc {
   font-size: 10px;
 }
-
 
 #projects .row {
   display: flex;
   align-items: stretch;
   margin-bottom: 10px;
 }
+
 #projects .column:hover {
-  transform: scale(1.2); /* Slight enlargement */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional for depth effect */
+  transform: scale(1.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
 
@@ -331,7 +346,7 @@ header.active, .menu-no-style-link.active {
 .projlang,
 .projdesc {
   align-self: flex-start;
-  margin: 3px 8px 0px;
+  margin: 3px 8px 0 0;
 }
 
 .projcontent {
@@ -339,6 +354,7 @@ header.active, .menu-no-style-link.active {
 }
 
 /*====================================================PAPERS====================================================*/
+
 #papers .row {
   padding: 20px;
   display: flex;
@@ -347,7 +363,6 @@ header.active, .menu-no-style-link.active {
   border-radius: 15px;
   margin: 2px 70px;
   align-items: center;
-  padding: 20px;
   gap: 20px;
 }
 
@@ -361,7 +376,6 @@ header.active, .menu-no-style-link.active {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-
 .paptext {
   flex: 1;
 }
@@ -374,10 +388,12 @@ header.active, .menu-no-style-link.active {
   font-size: 20px;
   font-weight: 1000;
 }
+
 .papauthor {
   font-size: 15px;
   font-style: italic;
 }
+
 .papdesc {
   font-size: 10px;
 }
@@ -385,108 +401,171 @@ header.active, .menu-no-style-link.active {
 select {
   overflow: auto;
 }
+
 /*====================================================NON====================================================*/
+
+#non .content {
+  margin: 0px 100px;
+}
+
 #non .column {
+  width: 300px; 
+  height: 300px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  overflow: hidden;
   font-weight: 500;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border: 1px solid #F4F4F6;
+  background-color: #F4F4F6;
+  color: #F4F4F6;
 }
+
 #non .blur-on-hover .default-text {
-  font-size: 25px;
+  font-size: 30px;
   margin: 10px;
 }
+
 #non .blur-on-hover .hover-text {
   font-size: 15px;
 }
 
-/*=====================COLORS!!!!!!!!================*/
+#non .blur-on-hover {
+  position: relative;
+  overflow: hidden;
+}
 
-/*whole*/
+#non .blur-on-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(0px) brightness(40%);
+  transform: scale(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  z-index: 0;
+}
+
+#non .blur-on-hover:hover::before {
+  filter: blur(6px) brightness(40%);
+  transform: scale(1.1);
+}
+
+
+/*====================================================COLORS - Separate Section at Bottom====================================================*/
+
+/* Whole */
 html {
-  background-color: white;
   color: black;
 }
-/*----------------------------------------*/
 
-
-/*----------------welcome-----------------*/
+/* Welcome */
 #main {
-  background-color: #0E131F;
-  color: white;
+  color: #F4F4F6;
 }
 
-
-/*----------------------------------------*/
-
-
-/*----------menu bar and section----------*/
+/* Menu bar and section */
 header {
-  background-color:inherit;
-  color: white;
+  background-color: black;
+  color: #F4F4F6;
 }
+
 .dropdown-content {
-  background-color: white;
+  background-color: #F4F4F6;
 }
-/*----------------------------------------*/
 
-
-/*-----------------titles------------------*/
-h2 {
-  background-color: white;
+.menu-no-style-link {
+  color: #F4F4F6;
 }
-/*----------------------------------------*/
 
-
-/*------------------link------------------*/
 .menu-no-style-link:hover,
 .dropdown:hover .menu-no-style-link {
   background-color: #bebec1;
   color: black;
 }
-.dropdown-content a {
-  color: black;
-}
-.dropdown-menu a {
-  color: black;
-}
-.dropdown-content a:hover {
-  background-color: #bebec1;
-}
+
 .no-style-link {
   color: black;
 }
-.menu-no-style-link {
-  color: white;
+
+.dropdown-content a {
+  color: black;
 }
-/*----------------------------------------*/
 
-
-/*---------------columns------------------*/
-.column {
-  background-color: white;
+.dropdown-content a:hover {
+  background-color: #bebec1;
 }
-/*----------------------------------------*/
 
+.dropdown-menu a {
+  color: black;
+}
 
+/* Titles */
+h2 {
+  background-color: transparent;
+  color: #F4F4F6;
+}
 
-/*------------projects--------------------*/
+/* Education */
+#educ {
+  background-color: black;
+}
+
+#educ .column {
+  border: 1px solid #F4F4F6;
+}
+
+#educ p,
+#non .column {
+  color: #F4F4F6;
+}
+
+/* Columns */
+#projects .column {
+  background-color: transparent;
+  color: #F4F4F6;
+  border: 1px solid #F4F4F6;
+}
+
+/* Projects */
 .projskill {
   background-color: rgb(225, 176, 184);
 }
-.projlang{
+
+.projlang {
   background-color: rgb(202, 100, 117);
 }
-/*----------------------------------------*/
 
-
-/*----------------papers------------------*/
+/* Papers */
 #papers .row {
-  background-color: white;
+  background-color: transparent;
+  color: #F4F4F6;
+  border: 1px solid #F4F4F6;
 }
-/*----------------------------------------*/
 
-
-/*---------with blur on hover--------------*/
-#non .column, #educ p {
-  color: white;
+/* Button */
+.button {
+  color: black;
+  background-color: #F4F4F6;
 }
-/*----------------------------------------*/
+
+.button:hover {
+  background-color: rgb(214, 214, 214);
+}
+
+.buttontrans {
+  color: #F4F4F6;
+  border-color: #F4F4F6;
+}
