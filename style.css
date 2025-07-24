@@ -17,21 +17,8 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Kameron', serif;
   font-size: 20px;
-}
-
-
-h1 {
-  text-align: center;
-  margin: 0 0 20px 0;
-  padding: 20px;
-  font-size: 150px;
-}
-
-.subtitle {
-  margin: 0px 20% 100px;
 }
 
 h2 {
@@ -47,15 +34,12 @@ sup {
   font-size: 10px;
 }
 
-#main {
-  margin: 0 !important;
-}
-
 #educ, #projects, #papers, #non {
   /*border: 2px solid black;*/
   /*border-radius: 15px;*/
   padding: 5px;
-  margin: 0px 5% 30px;
+  margin: 0px 5% 0;
+  min-height: 100vh;
 }
 
 section .content {
@@ -64,6 +48,51 @@ section .content {
   margin: 20px 20px;
 }
 
+#main {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-image: url(Pictures/oble.jfif);
+  background-size: 140% auto;
+  background-position: 100% 50%;
+}
+/*#main img {
+  object-fit: cover;
+  width: 400px;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 70px;
+}*/
+.main-content {
+  flex: 1;
+  align-items: center;
+  margin-top: 0px;
+  margin-left: 570px;
+}
+h1 {
+  font-size: 100px;
+  margin: 0;
+}
+.subtitle {
+  margin-top: 0;
+}
+.connect-contact {
+  margin-top: 50px;
+}
+.button {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border-radius: 25px;
+  margin: 0 12px;
+  padding: 10px 15px;
+}
+
+.button:hover {
+  background-color: rgb(214, 214, 214);
+}
 /*====================================================HEADER====================================================*/
 
 
@@ -76,7 +105,14 @@ header {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: right;
+  display: none;
 }
+
+header.active, .menu-no-style-link.active {
+  display: inline;
+  color: black;
+}
+
 
 /*================== Dropdown ==================*/
 .dropdown {
@@ -105,6 +141,7 @@ header {
   line-height: 1;
   text-decoration: none;
   border: 0.1px solid #eee8e8;
+  
 }
 
 .dropdown-menu {
@@ -193,7 +230,7 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(1px) brightness(60%);
+  filter: blur(0px) brightness(60%);
   transform: scale(1);
   transition: filter 0.3s ease, transform 0.3s ease;
   z-index: 0;
@@ -216,7 +253,6 @@ header {
   align-items: center;
   cursor: pointer;
   text-align: center;
-  
 }
 
 .text-swap .hover-text {
@@ -351,12 +387,11 @@ select {
 }
 /*====================================================NON====================================================*/
 #non .column {
-  font-size: 20px;
   font-weight: 500;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 #non .blur-on-hover .default-text {
-  font-size: 20px;
+  font-size: 25px;
   margin: 10px;
 }
 #non .blur-on-hover .hover-text {
@@ -374,17 +409,19 @@ html {
 
 
 /*----------------welcome-----------------*/
-h1 {
+#main {
   background-color: #0E131F;
   color: white;
 }
+
+
 /*----------------------------------------*/
 
 
 /*----------menu bar and section----------*/
 header {
-  background-color: white;
-  color: black;
+  background-color:inherit;
+  color: white;
 }
 .dropdown-content {
   background-color: white;
@@ -414,8 +451,11 @@ h2 {
 .dropdown-content a:hover {
   background-color: #bebec1;
 }
-.menu-no-style-link, .no-style-link {
+.no-style-link {
   color: black;
+}
+.menu-no-style-link {
+  color: white;
 }
 /*----------------------------------------*/
 
