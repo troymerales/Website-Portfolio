@@ -30,6 +30,10 @@ h2 {
   border-radius: 15px;
 }
 
+.h2style {
+  border-bottom: 3px solid var(--boxcolor);
+}
+
 sup {
   font-size: 10px;
 }
@@ -45,15 +49,25 @@ header {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: right;
-  display: none;
-  
+
+  /* Start hidden */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
-header.active,
+header.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-no-style-link {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .menu-no-style-link.active {
-  display: inline;
-  
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
 }
 
 .dropdown {
@@ -70,6 +84,7 @@ header.active,
   min-width: 200px;
   text-align: left;
   border: 1px solid #000000;
+  border-radius: 15px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -81,17 +96,15 @@ header.active,
   padding: 15px 12px;
   line-height: 1;
   text-decoration: none;
-  border: 0.1px solid #eee8e8;
 }
 
 .dropdown-content a:hover {
-  background-color: transparent; /* placeholder, real color at bottom */
+  border-radius: 15px;
 }
 
 .dropdown-menu {
   display: none;
   position: absolute;
-  border: 1px solid #ccc;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   z-index: 1;
   padding: 10px;
@@ -290,19 +303,20 @@ section .content {
 /*====================================================PROJECTS====================================================*/
 
 #projects img {
-  width: 180px;
-  height: 120px;
-  border-radius: 15px;
+  width: 220px;
+  height: 140px;
+  border-radius: 15px 15px 0px 0px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-top: 0%;
   margin-bottom: 5px;
-  border: 1px solid #F4F4F6;
+  border: 1px solid var(--boxcolor);
+  object-fit: cover;
 }
 
 #projects .column {
   flex: 0 0 100px;
-  width: 180px;
-  height: 280px !important;
+  width: 220px;
+  height: 320px !important;
   position: relative;
   z-index: 1;
   transition: transform 0.1s ease;
@@ -310,7 +324,6 @@ section .content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 20px;
 }
 
 .projtitle {
@@ -326,7 +339,7 @@ section .content {
 }
 
 .projdesc {
-  font-size: 10px;
+  font-size: 9px;
 }
 
 #projects .row {
@@ -346,11 +359,11 @@ section .content {
 .projlang,
 .projdesc {
   align-self: flex-start;
-  margin: 3px 8px 0 0;
+  margin-top: 10px;
 }
 
 .projcontent {
-  display: contents;
+  margin: 0px 20px auto 15px;
 }
 
 /*====================================================PAPERS====================================================*/
@@ -422,9 +435,9 @@ select {
   overflow: hidden;
   font-weight: 500;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  border: 1px solid #F4F4F6;
-  background-color: #F4F4F6;
-  color: #F4F4F6;
+  border: 1px solid var(--boxcolor);
+  background-color: var(--boxcolor);
+  color: var(--boxcolor);
 }
 
 #non .blur-on-hover .default-text {
@@ -468,40 +481,45 @@ select {
 
 /* Whole */
 html {
-  color: black;
+  color: var(--textinboxcolor);
 }
+
+:root {
+  --boxcolor: #fffbfb;
+  --textinboxcolor: rgb(0, 0, 0);
+}
+
 
 /* Welcome */
 #main {
-  color: #F4F4F6;
+  color: var(--boxcolor);
 }
 
 /* Menu bar and section */
 header {
-  background-color: black;
-  color: #F4F4F6;
+  background-color: rgba(32, 31, 31, 0.8);
+  color: var(--boxcolor);
 }
 
 .dropdown-content {
-  background-color: #F4F4F6;
+  background-color: var(--boxcolor);
 }
 
 .menu-no-style-link {
-  color: #F4F4F6;
+  color: var(--boxcolor);
 }
 
 .menu-no-style-link:hover,
 .dropdown:hover .menu-no-style-link {
-  background-color: #bebec1;
-  color: black;
+  background-color: #696969;
 }
 
 .no-style-link {
-  color: black;
+  color: var(--textinboxcolor);
 }
 
 .dropdown-content a {
-  color: black;
+  color: var(--textinboxcolor);
 }
 
 .dropdown-content a:hover {
@@ -509,34 +527,31 @@ header {
 }
 
 .dropdown-menu a {
-  color: black;
+  color: var(--textinboxcolor);
 }
 
 /* Titles */
 h2 {
   background-color: transparent;
-  color: #F4F4F6;
+  color: var(--boxcolor);
 }
 
 /* Education */
-#educ {
-  background-color: black;
-}
 
 #educ .column {
-  border: 1px solid #F4F4F6;
+  border: 1px solid var(--boxcolor);
 }
 
 #educ p,
 #non .column {
-  color: #F4F4F6;
+  color: var(--boxcolor);
 }
 
 /* Columns */
 #projects .column {
-  background-color: transparent;
-  color: #F4F4F6;
-  border: 1px solid #F4F4F6;
+  background-color: var(--boxcolor);
+  color: var(--textinboxcolor);
+  border: 1px solid var(--boxcolor);
 }
 
 /* Projects */
@@ -550,22 +565,22 @@ h2 {
 
 /* Papers */
 #papers .row {
-  background-color: transparent;
-  color: #F4F4F6;
-  border: 1px solid #F4F4F6;
+  background-color: var(--boxcolor);
+  color: var(--textinboxcolor);
+  border: 1px solid var(--textinboxcolor);
 }
 
 /* Button */
 .button {
   color: black;
-  background-color: #F4F4F6;
+  background-color: var(--boxcolor);
 }
 
 .button:hover {
-  background-color: rgb(214, 214, 214);
+  background-color: rgb(185, 182, 182);
 }
 
 .buttontrans {
-  color: #F4F4F6;
-  border-color: #F4F4F6;
+  color: var(--boxcolor);
+  border-color: var(--boxcolor);
 }
