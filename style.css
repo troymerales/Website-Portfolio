@@ -161,7 +161,7 @@ header.active {
   display: flex;
   text-align: center;
   align-items: center;
-  background-image: url(Pictures/oble.jfif);
+  background-image: url(Pictures/Education/oble.jfif);
   background-size: 140% auto;
   background-position: 100% 50%;
 }
@@ -218,7 +218,7 @@ h1 {
   padding: 5px;
   margin: 0;
   min-height: 110vh;
-  background-image: url(Pictures/oble.jfif);
+  background-image: url(Pictures/Education/oble.jfif);
   background-size: 260% auto;
   background-position: 100% 70%;
 }
@@ -314,32 +314,37 @@ section .content {
 }
 
 #projects .column {
-  flex: 0 0 100px;
+  /*flex: 0 0 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;*/
   width: 220px;
   height: 320px !important;
   position: relative;
   z-index: 1;
   transition: transform 0.1s ease;
   margin: 5px 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  opacity: 95%;
 }
 
 .projtitle {
+  display: block;
   font-size: 18px;
   font-weight: 1000;
+  margin-top: 10px;
+  align-items: center;
 }
 
 .projskill,
 .projlang {
   border-radius: 15px;
-  padding: 2px 10px 2px 10px;
-  font-size: 10px;
+  padding: 2px 8px;
+  font-size: 11px;
+  margin-bottom: 10px;
 }
 
 .projdesc {
-  font-size: 9px;
+  font-size: 10px;
 }
 
 #projects .row {
@@ -354,16 +359,16 @@ section .content {
   z-index: 10;
 }
 
-.projtitle,
-.projskill,
-.projlang,
-.projdesc {
-  align-self: flex-start;
-  margin-top: 10px;
-}
-
 .projcontent {
   margin: 0px 20px auto 15px;
+}
+
+.projskill, .projlang {
+  width: fit-content;
+  margin-bottom: 3px;
+}
+.projstack{
+  margin: 5px 0 7px;
 }
 
 /*====================================================PAPERS====================================================*/
@@ -377,6 +382,7 @@ section .content {
   margin: 2px 70px;
   align-items: center;
   gap: 20px;
+  opacity: 95%;
 }
 
 #papers img {
