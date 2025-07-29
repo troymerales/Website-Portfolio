@@ -1,0 +1,12 @@
+html {
+    background-color:black;
+}
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(37, 37, 37);
+}
+embed{
+    width: 70%;
+    height: 98vh;
+}

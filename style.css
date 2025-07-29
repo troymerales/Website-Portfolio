@@ -382,7 +382,6 @@ section .content {
   margin: 2px 70px;
   align-items: center;
   gap: 20px;
-  opacity: 95%;
 }
 
 #papers img {
@@ -401,6 +400,7 @@ section .content {
 
 #papers .row:hover {
   transform: scale(1.1);
+  z-index: 100;
 }
 
 .paptitle {
@@ -491,7 +491,7 @@ html {
 }
 
 :root {
-  --boxcolor: #fffbfb;
+  --boxcolor: #fdfdfd;
   --textinboxcolor: rgb(0, 0, 0);
 }
 
