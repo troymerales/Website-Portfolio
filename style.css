@@ -1,21 +1,16 @@
 /*====================================================GLOBAL====================================================*/
 
 /*================== Fonts ==================*/
-@font-face {
-  font-family: 'Kameron';
-  src: url('Fonts/Kameron-Medium.ttf') format('truetype');
-  font-weight: normal;
-}
 
 /*================== Global Styles ==================*/
 html {
   scroll-behavior: smooth;
   background-color: #000000;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: 'Kameron', serif;
   font-size: 20px;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -25,17 +20,22 @@ body {
 h2 {
   font-size: 40px;
   text-align: center;
-  margin: 20px 20px;
   padding: 20px 0;
   border-radius: 15px;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 .h2style {
-  border-bottom: 3px solid var(--boxcolor);
+  border-bottom: 3px solid black;
 }
 
 sup {
   font-size: 10px;
+}
+
+.subtitle {
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-bottom: 50px;
 }
 
 /*====================================================HEADER====================================================*/
@@ -54,6 +54,9 @@ header {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+
+  font-size: 15px;
+  font-weight: 500;
 }
 
 header.active {
@@ -156,46 +159,54 @@ header.active {
 
 /*====================================================MAIN====================================================*/
 
+.negaspace {
+  height: inherit;
+  background: linear-gradient(to right, #171717, #212121);
+  width: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
 #main {
   height: 100vh;
   display: flex;
-  text-align: center;
   align-items: center;
-  background-image: url(Pictures/Education/oble.jfif);
-  background-size: 140% auto;
-  background-position: 100% 50%;
 }
 
-.main-content {
+#main .content {
   flex: 1;
-  align-items: center;
-  margin-top: 0;
-  margin-left: 570px;
+  text-align: left;
+  align-content: center;
+  margin-left: 7%;
 }
 
 h1 {
-  font-size: 100px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 80px;
   margin: 0;
-}
-
-.subtitle {
-  margin-top: 0;
+  font-weight: 700;
 }
 
 .connect-contact {
   margin-top: 50px;
+  display: inline;
 }
 
 .button {
+  font-family: 'Source Sans 3', sans-serif;
   text-decoration: none;
   border-radius: 25px;
+  padding: 10px 20px 12px;
+  font-size: 15px;
+  border: 1px solid black;
   margin: 0 12px;
-  padding: 12px 20px;
-  font-weight: bold;
 }
 
-.button:hover {
-  background-color: transparent; /* placeholder for color */
+.connect-contact {
+  margin-top: 30px;
 }
 
 .buttontrans {
@@ -203,32 +214,31 @@ h1 {
   border: 1px solid;
   background-color: inherit;
   border-radius: 25px;
-  margin: 0 12px;
+  margin-top: 10px;
   padding: 10px 15px;
+  font-size: 20px;
+}
+
+.buttontrans:hover{
+  background-color: #2d2d2d;
 }
 
 /*====================================================EDUCATION====================================================*/
 
-
-
-#educ,
-#projects,
-#papers,
-#non {
-  padding: 5px;
-  margin: 0;
-  min-height: 110vh;
-  background-image: url(Pictures/Education/oble.jfif);
-  background-size: 260% auto;
-  background-position: 100% 70%;
+.content {
+  flex: 1;
+  height: inherit;
 }
 
-section .content {
-  margin: 0 100px 20px;
+#educ {
+  display: flex;
+  height: 100vh;
+  align-items: center;
 }
+
 
 #educ p {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin: 30px;
@@ -236,8 +246,9 @@ section .content {
 
 #educ .column {
   border-radius: 10px;
-  width: 500px;
-  height: 400px;
+  width: 400px;
+  margin: 0 30px;
+  height: 300px;
 }
 
 /* Effects: Blur on Hover */
@@ -266,7 +277,7 @@ section .content {
 }
 
 .blur-on-hover:hover::before {
-  filter: blur(6px) brightness(40%);
+  filter: blur(6px) brightness(30%);
   transform: scale(1.05);
 }
 
@@ -295,19 +306,25 @@ section .content {
 
 .text-swap:hover .hover-text {
   display: block;
-  font-size: 20px;
+  font-size: 16px;
   margin: 30px;
+  font-family: 'Source Sans One', sans-serif;
   font-weight: normal;
 }
 
 /*====================================================PROJECTS====================================================*/
 
+#projects {
+  display: flex;
+  height: 200vh;
+}
+
 #projects img {
-  width: 220px;
-  height: 140px;
+  width: 190px;
+  height: 110px;
   border-radius: 15px 15px 0px 0px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-top: 0%;
+  margin-top: 5px;
   margin-bottom: 5px;
   border: 1px solid var(--boxcolor);
   object-fit: cover;
@@ -318,33 +335,35 @@ section .content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;*/
-  width: 220px;
-  height: 320px !important;
+  width: 200px;
+  height: 280px !important;
   position: relative;
   z-index: 1;
   transition: transform 0.1s ease;
   margin: 5px 15px;
   opacity: 95%;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 .projtitle {
   display: block;
-  font-size: 18px;
-  font-weight: 1000;
+  font-size: 16px;
+  font-weight: 700;
   margin-top: 10px;
   align-items: center;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 .projskill,
 .projlang {
   border-radius: 15px;
   padding: 2px 8px;
-  font-size: 11px;
+  font-size: 9px;
   margin-bottom: 10px;
 }
 
 .projdesc {
-  font-size: 10px;
+  font-size: 8px;
 }
 
 #projects .row {
@@ -373,21 +392,26 @@ section .content {
 
 /*====================================================PAPERS====================================================*/
 
+#papers {
+  display: flex;
+  height: 200vh;
+}
+
 #papers .row {
-  padding: 20px;
+  padding: 16px;
   display: flex;
   transition: transform 0.1s ease;
   border: 1px solid black;
   border-radius: 15px;
-  margin: 2px 70px;
+  margin: 2px 200px;
   align-items: center;
   gap: 20px;
 }
 
 #papers img {
   object-fit: cover;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   border-radius: 8px;
   flex-shrink: 0;
   border: 0.5px solid black;
@@ -404,17 +428,17 @@ section .content {
 }
 
 .paptitle {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 1000;
 }
 
 .papauthor {
-  font-size: 15px;
+  font-size: 13px;
   font-style: italic;
 }
 
 .papdesc {
-  font-size: 10px;
+  font-size: 9px;
 }
 
 select {
@@ -423,13 +447,20 @@ select {
 
 /*====================================================NON====================================================*/
 
+#non {
+  height: 150vh;
+  display: flex;
+}
+
 #non .content {
   margin: 0px 100px;
+  flex: 1;
+  align-items: center;
 }
 
 #non .column {
-  width: 300px; 
-  height: 300px;
+  width: 250px; 
+  height: 250px;
   border-radius: 50%;
   flex: 0 0 auto;
   
@@ -444,6 +475,8 @@ select {
   border: 1px solid var(--boxcolor);
   background-color: var(--boxcolor);
   color: var(--boxcolor);
+
+  
 }
 
 #non .blur-on-hover .default-text {
@@ -452,7 +485,7 @@ select {
 }
 
 #non .blur-on-hover .hover-text {
-  font-size: 15px;
+  font-size: 12px;
 }
 
 #non .blur-on-hover {
@@ -478,7 +511,7 @@ select {
 }
 
 #non .blur-on-hover:hover::before {
-  filter: blur(6px) brightness(40%);
+  filter: blur(6px) brightness(30%);
   transform: scale(1.1);
 }
 
@@ -487,18 +520,38 @@ select {
 
 /* Whole */
 html {
-  color: var(--textinboxcolor);
+  background-color:
+#FAF9F6;
 }
 
 :root {
-  --boxcolor: #fdfdfd;
+  --boxcolor: #FAF9F6;
   --textinboxcolor: rgb(0, 0, 0);
 }
 
+.rline {
+  position: relative; /* attaches to screen */
+  right: 0;         /* stick to the right edge */
+  width: 8px;
+  height: 250px;    /* independent height */
+  background-color: black;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.lline {
+  position: relative; /* attaches to screen */
+  left: 0;         /* stick to the right edge */
+  width: 8px;
+  height: 250px;    /* independent height */
+  background-color: black;
+  border-radius: 10px;
+  align-self: center;
+}
 
 /* Welcome */
 #main {
-  color: var(--boxcolor);
+  color: black;
 }
 
 /* Menu bar and section */
@@ -539,7 +592,7 @@ header {
 /* Titles */
 h2 {
   background-color: transparent;
-  color: var(--boxcolor);
+  color: black;
 }
 
 /* Education */
@@ -557,7 +610,7 @@ h2 {
 #projects .column {
   background-color: var(--boxcolor);
   color: var(--textinboxcolor);
-  border: 1px solid var(--boxcolor);
+  border: 1px solid black;
 }
 
 /* Projects */
@@ -571,7 +624,7 @@ h2 {
 
 /* Papers */
 #papers .row {
-  background-color: var(--boxcolor);
+  background-color:  #f8f8f8;
   color: var(--textinboxcolor);
   border: 1px solid var(--textinboxcolor);
 }
@@ -579,14 +632,27 @@ h2 {
 /* Button */
 .button {
   color: black;
-  background-color: var(--boxcolor);
+  background-color: transparent;
 }
 
 .button:hover {
-  background-color: rgb(185, 182, 182);
+  background-color: rgb(232, 232, 232);
 }
 
 .buttontrans {
   color: var(--boxcolor);
   border-color: var(--boxcolor);
+}
+
+
+#papers, #educ {
+box-shadow: inset 2px 2px 5px #aaa,
+              inset -2px -2px 5px #fff;
+background-color: #f8f8f8;
+}
+
+#main, #projects, #non {
+box-shadow: 2px 2px 5px #fff,
+              -2px -2px 5px #aaa;
+background-color: #FAF9F6;
 }

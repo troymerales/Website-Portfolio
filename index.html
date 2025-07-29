@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta charset="UTF-8">
     <title>Benedicto M. Merales Jr - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Julius+Sans+One&family=Kameron:wght@400..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -57,19 +60,26 @@
 
 
 <section id="main">
-<div class="main-content">
+
+<div class="content">
   <h1>
     Welcome!
   </h1>
   <div class="subtitle">  
-    <p style="font-size: 40px;">
-      I am <span style="color: rgb(202, 100, 117);">Benedicto M. Merales Jr</span>.
-    </p> 
-    A passionate math student that seeks to dive into the <u>world of data</u>.
+    <div style="font-size: 30px; margin: -15px 0px 25px;">
+      I am Benedicto M. Merales Jr.
+    </div> 
+    <div style="font-weight: 1; font-size: 18px;">A passionate math student that seeks to dive into the world of data. </div>
   </div>
   <div class="connect-contact">
-    <a href="#educ" class="button">Explore</a>
+    <a href="#educ" class="button">Education</a> 
+    <a href="#projects" class="button">Projects</a> 
+    <a href="#papers" class="button">Papers</a> 
+    <a href="#non" class="button">Non-Academic Projects</a>
   </div>
+</div>
+
+<div class="negaspace" style="width: 40%;">
 </div>
 </section>
 
@@ -77,8 +87,10 @@
 <!----- Education ----->
 
 <section id="educ">
-  <h2><span class="h2style">EDUCATION</span></h2>
-<div class="content">
+
+<div class="lline"></div>
+
+<div class="content"> <h2><span class="h2style">EDUCATION</span></h2>
 
 <div class="row">   
   <a href="https://pshs.edu.ph/" class="no-style-link">
@@ -104,9 +116,9 @@
 
 <!----- Projects ----->
 <section id="projects">
-  <h2><span class="h2style">PROJECTS</span></h2>
-<div class="content">
 
+<div class="content">
+<h2><span class="h2style">PROJECTS</span></h2>
 <div class="row">
   <a href="https://github.com/troymerales/Website-Portfolio" class="no-style-link">
     <div class="column">
@@ -128,7 +140,7 @@
       <div class="projcontent">
         <div class="projtitle">Newton-like Method</div>
         <div class="projstack">
-          <div class="projlang">Python Notebook</div>   
+          <div class="projlang">Python</div>   
           <div class="projskill">Linear Algebra, Calculus, Numpy</div>  
         </div>
         <div class="projdesc">An expository code on Sharma and Guha's (2015) paper.</div>
@@ -142,7 +154,7 @@
       <div class="projcontent">
         <div class="projtitle">Root-finding Methods</div>  
         <div class="projstack">
-          <div class="projlang">Python Notebook</div>   
+          <div class="projlang">Python</div>   
           <div class="projskill">Numpy, Matplot</div>  
         </div>
         <div class="projdesc">Estimates the roots of nonlinear equations using four different methods.</div>
@@ -214,7 +226,7 @@
       <div class="projcontent">
         <div class="projtitle">Newton-Cotes</div>  
         <div class="projstack">
-          <div class="projlang">Python Notebook</div>  
+          <div class="projlang">Python</div>  
           <div class="projskill">Numpy, Calculus, Linear Algebra</div>  
         </div> 
         <div class="projdesc">A notebook that estimates definite integrals by fitting a polynomial to equally spaced points on the interval.</div>
@@ -269,13 +281,18 @@
 
 </div>
 
+<div class="rline"></div>
+
 </section>
 
 <!----- Papers ----->
 <section id="papers">
-  <h2><span class="h2style">ACADEMIC PAPERS</span></h2>
-<div class="content">
 
+
+<div class="lline"></div>
+
+<div class="content">
+<h2><span class="h2style">ACADEMIC PAPERS</span></h2>
 <!--Sort by: 
 <select id="sort">
     <option>Date (latest)</option>
@@ -288,7 +305,7 @@
   <div class="row">
     <img src="Pictures/Papers/sup.png">
     <div class="paptext">
-      <div class="paptitle">A supplementary learning material in Pre-Calculus for incoming Undergraduate Student (under works)</div>
+      <div class="paptitle">A supplementary learning material in Pre-Calculus for incoming Undergraduate Student (on-going)</div>
       <div class="papauthor">Merales, B., Bosoboso, K., Catequista, M. J. - 2025</div>
       <div class="papdesc">A learning resource designed to support undergraduate students in mastering Pre-Calculus concepts.</div>
     </div>
@@ -359,8 +376,10 @@
 
 <!----- Non-academic ----->
 <section id="non">
-  <h2><span class="h2style">NON-ACADEMIC PROJECTS AND VOLUNTEER WORK</span></h2>
+
 <div class="content">
+
+<h2><span class="h2style">NON-ACADEMIC PROJECTS AND VOLUNTEER WORK</span></h2>
 
 <div class="row">
     <div class="column text-swap blur-on-hover" data-bg="Pictures/Non/upstrum.JPG">
@@ -386,7 +405,9 @@
         <span class="hover-text">Taught underprivileged children in Carigara, Leyte basic reading and math skills.</span>
     </div>
 </div>
-</div></section>
+</div>
+<div class="rline"></div>
+</section>
 
 
 <script>
