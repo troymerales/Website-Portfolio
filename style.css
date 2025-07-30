@@ -124,7 +124,7 @@ sup {
   padding: 12px 20px 12px;
   font-size: 15px;
   border: 1px solid black;
-  margin: 0 12px;
+  margin: 0 12px 0 0;
   color: black;
   background-color: transparent;
 }
@@ -261,6 +261,7 @@ header.active {
 .connect-contact {
   margin-top: 30px;
   display: inline;
+  margin-left: 0;
 }
 
 /*====================================================SECTION: EDUCATION====================================================*/
@@ -282,7 +283,7 @@ box-shadow:
 }
 
 #educ p {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin: 30px;
