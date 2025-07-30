@@ -411,7 +411,7 @@ box-shadow:
 
 #papers {
   display: flex;
-  height: 175vh;
+  height: 200vh;
   position: relative;
   background-color: var(--c2);
   border-radius: 65px;
